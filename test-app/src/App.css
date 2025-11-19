@@ -1,38 +1,210 @@
+/* ====== ГЛОБАЛЬНЫЙ ФОН С ГРАДИЕНТОМ ====== */
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: linear-gradient(135deg, #bfb8f1, #4f87d0);
+  color: rgb(76, 72, 72);
+}
+
+/* Контейнер приложения */
 .App {
-  text-align: center;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Лёгкая анимация появления */
+.App > * {
+  animation: fadeIn 0.5s ease forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* ====== КНОПКИ ====== */
+button {
+  background: linear-gradient(135deg, #f0b0e9b8, #d79ce9);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
   color: white;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(99, 119, 230, 0.846);
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background: linear-gradient(135deg, #6d8de4, #5876ff);
+  transform: translateY(-3px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:active {
+  transform: translateY(0);
+}
+
+/* ====== Блок быстрых действий ====== */
+.quick-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Кнопки быстрой панели */
+.quick-actions button:nth-child(2) {
+  background: linear-gradient(135deg, #ff6b6b, #ff8585);
+  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.3);
+}
+
+.quick-actions button:nth-child(2):hover {
+  background: linear-gradient(135deg, #e25757, #ff7070);
+}
+
+.quick-actions button:nth-child(3) {
+  background: linear-gradient(135deg, #6bbccf, #74d4e8);
+  box-shadow: 0 4px 10px rgba(101, 200, 227, 0.579);
+}
+
+.quick-actions button:nth-child(3):hover {
+  background: linear-gradient(135deg, #2a9fba, #5de0ec);
+}
+
+/* ====== КАРТОЧКИ ТЕХНОЛОГИЙ ====== */
+.technology-card {
+  padding: 20px;
+  background: #ffffffc5;
+  border-radius: 14px;
+  border-left: 10px solid #cfcfcf;
+  transition: 0.25s;
+  margin-bottom: 18px;
+  backdrop-filter: blur(6px);
+}
+
+.technology-card:hover {
+  background: #ffffffee;
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Цвета статусов */
+.status-not-started { border-left-color: #ff6b6b; }
+.status-in-progress { border-left-color: #4ecdc4; }
+.status-completed { border-left-color: #45b7d1; }
+
+.status-label {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ====== ШАПКА ПРОГРЕССА ====== */
+.progress-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #eef3ff, #f4f7ff);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.progress-header h2 {
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  height: 18px;
+  background: #dce4ff;
+  border-radius: 9px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #4f7cff, #6e9dff);
+  transition: width 0.3s ease;
+}
+
+/* ====== КАРТОЧКА СТУДЕНТА ====== */
+.user-card {
+  padding: 22px;
+  background: #ffffffcc;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  gap: 25px;
+  backdrop-filter: blur(6px);
+}
+
+/* Увеличили фото студента */
+.user-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  transition: 0.25s;
+}
+
+/* Эффект наведения */
+.user-card img:hover {
+  transform: scale(1.05);
+}
+
+/* ====== TaskList ====== */
+.task-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.task-list li {
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  background: #ffffffc8;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  transition: 0.2s;
+  backdrop-filter: blur(5px);
+}
+
+.task-list li.completed {
+  background: #e4ffe4bb;
+}
+
+.task-list li.pending {
+  background: #fff5e6cc;
+}
+
+/* ====== ColorPicker ====== */
+.color-picker {
+  padding: 18px;
+  background: #ffffffcc;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  backdrop-filter: blur(6px);
+}
+
+.color-controls button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: 0.25s;
+}
+
+.color-controls button:hover {
+  transform: scale(1.12);
+}
+
+.color-controls button.active {
+  transform: scale(1.15);
 }
