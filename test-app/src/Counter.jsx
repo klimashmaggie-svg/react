@@ -17,13 +17,13 @@ function Counter() {
 
   return (
     <div className="counter">
-      <h2>Счетчик: {count}</h2>
+      <h2 className='count'>Счетчик: {count}</h2>
       <div className="counter-buttons">
-        <button onClick={decrement}>-1</button>
-        <button onClick={reset}>Сбросить</button>
-        <button onClick={increment}>+1</button>
+        <button onClick={decrement} className='plusmin'>-1</button>
+        <button onClick={reset} className="throw-off">Сбросить</button>
+        <button onClick={increment} className='plusmin'>+1</button>
       </div>
-      <p>Текущее значение: <strong>{count}</strong></p>
+      <p className='num-now'>Текущее значение: <strong>{count}</strong></p>
     </div>
   );
 }

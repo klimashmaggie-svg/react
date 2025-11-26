@@ -31,10 +31,10 @@ function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="registration-form">
-      <h2>Регистрация</h2>
+      <h2 className='regist'>Регистрация</h2>
       
       <div className="form-group">
-        <label>Имя:</label>
+        <label className='registration-input'>Имя:</label>
         <input
           type="text"
           name="name"
@@ -45,7 +45,7 @@ function RegistrationForm() {
       </div>
 
       <div className="form-group">
-        <label>Email:</label>
+        <label className='registration-input'>Email:</label>
         <input
           type="email"
           name="email"
@@ -57,7 +57,7 @@ function RegistrationForm() {
       </div>
 
       <div className="form-group">
-        <label>Пароль:</label>
+        <label className='registration-input'>Пароль:</label>
         <input
           type="password"
           name="password"
@@ -67,7 +67,7 @@ function RegistrationForm() {
         />
       </div>
 
-      <button type="submit">Зарегистрироваться</button>
+      <button type="submit" className='reg'>Зарегистрироваться</button>
     </form>
   );
 }

@@ -1,14 +1,14 @@
 function Greeting() {
-    const userName = "Anna";
+    const userName = "Анна Сергеевна";
     const currentTime = new Date().getHours();
     let timeOfDay;
     
     if (currentTime < 12) {
-      timeOfDay = "Good morning";
+      timeOfDay = "Доброе утро";
     } else if (currentTime < 18) {
-      timeOfDay = "Goor afternoon";
+      timeOfDay = "Добрый день";
     } else {
-      timeOfDay = "Good evening";
+      timeOfDay = "Добрый вечер";
     }
   
     return (

@@ -8,32 +8,36 @@ function ColorDisplay({ color }) {
         backgroundColor: color,
         width: '200px',
         height: '100px',
-        margin: '10px 0'
+        margin: '10px 0',
       }}
     >
-      <p>Выбранный цвет: {color}</p>
+      {/* убран текст цвета */}
     </div>
   );
 }
 
 function ColorControls({ color, onColorChange }) {
 
-    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
-  
+  const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
 
   return (
     <div className="color-controls">
       <h3>Выберите цвет:</h3>
-      <div className="color-buttons">
+      <div className="color-buttons" style={{ display: 'flex', gap: '10px' }}>
         {colors.map((col) => (
           <button
             key={col}
-            style={{ backgroundColor: col }}
+            style={{ 
+              backgroundColor: col,
+              width: '40px',
+              height: '40px',
+              borderRadius: '6px',
+              border: color === col ? '3px solid white' : '1px solid #ccc',
+              cursor: 'pointer'
+            }}
             onClick={() => onColorChange(col)}
             className={color === col ? 'active' : ''}
-          >
-            {col}
-          </button>
+          />
         ))}
       </div>
     </div>
@@ -49,7 +53,7 @@ function ColorPicker() {
       <ColorDisplay color={selectedColor} />
       <ColorControls 
         color={selectedColor} 
-        onColorChange={setSelectedColor} св ецые
+        onColorChange={setSelectedColor}
       />
     </div>
   );

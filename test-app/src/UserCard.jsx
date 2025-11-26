@@ -7,7 +7,7 @@ function UserCard({ name, role, avatarUrl, isOnline }) {
           <img className="me" src={avatarUrl} alt={`Аватар ${name}`} />
           </div>
 
-          <p>Статус: {isOnline? 'online':'offline'}</p>
+          <p className="status">Статус: {isOnline? 'online':'offline'}</p>
         </div>
         <div className="user-info">
           <h3 className="h3">{name}</h3>

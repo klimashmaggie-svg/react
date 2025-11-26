@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.progress-dashboard {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.progress-dashboard h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* ---------- Блок недельного прогресса ---------- */
+
+.weekly-progress {
+  margin-top: 35px;
+}
+
+.weekly-progress h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.weekly-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Одна строка недели */
+.week-item {
+  display: grid;
+  grid-template-columns: 110px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+}
+
+.week-label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.week-percentage {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Общий стиль прогресс-баров внутри */
+.week-item .progress-bar {
+  height: 12px !important; /* фиксируем высоту недельных баров */
+}
+
+/* Увеличиваем кликабельность и понятность */
+.week-item .progress-bar-container {
+  border-radius: 8px;
+}

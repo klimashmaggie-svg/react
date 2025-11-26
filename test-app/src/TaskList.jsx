@@ -8,7 +8,7 @@ function TaskList() {
   
     return (
       <div className="task-list">
-        <h2 className="h2">Список задач</h2>
+        <h2 className="list-work">Список задач</h2>
         <ul className="task">
           {tasks.map(task => (
             <li key={task.id} className={task.completed ? 'completed' : 'pending'}>

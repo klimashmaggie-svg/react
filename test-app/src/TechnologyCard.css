@@ -1,24 +1,24 @@
 .technology-card {
-    border-left: 8px solid #ccc;
-    padding: 16px;
-    margin-bottom: 12px;
-    background: #fff;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .technology-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .status-not-started { border-left-color: #ff6b6b; }
-  .status-in-progress { border-left-color: #4ecdc4; }
-  .status-completed { border-left-color: #45b7d1; }
-  
-  .status-label {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
+  border-left: 17px solid #ccc;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+.technology-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.status-not-started { border-left-color: #fa6464; margin-bottom: 45px; }
+.status-in-progress { border-left-color: #f5ed4f; margin-bottom: 45px; }
+.status-completed   { border-left-color: #3166c2; margin-bottom: 45px; }
+
+.status-label {
+  margin-top: 10px;
+  font-weight: bold;
+}
